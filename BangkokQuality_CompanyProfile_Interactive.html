@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bangkok Quality Milk Products — Supply Partnership Profile</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1F3A5F; --blue:#2B7FB8; --sky:#8FCDEC; --sky-soft:#EAF3FA;
+    --red:#C0392B; --grey:#5A6470; --ink:#1c2530; --line:rgba(31,58,95,.12);
+    --bg:#F6FAFD; --white:#fff; --gold:#C8A24B;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--bg);line-height:1.65;}
+  h1,h2,h3,.brand{font-family:'Poppins',sans-serif;}
+
+  /* NAV */
+  .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+  .nav-in{max-width:1180px;margin:0 auto;display:flex;align-items:center;gap:8px;padding:12px 24px;flex-wrap:wrap;}
+  .nav-logo{font-family:'Poppins';font-weight:800;color:var(--navy);font-size:15px;letter-spacing:.3px;margin-right:auto;}
+  .nav-logo span{color:var(--blue);}
+  .nav a{font-size:12.5px;color:var(--grey);text-decoration:none;padding:6px 11px;border-radius:20px;transition:.2s;font-weight:500;}
+  .nav a:hover{background:var(--sky-soft);color:var(--navy);}
+  @media(max-width:860px){.nav a{display:none;}.nav a.cta{display:inline-block;}}
+  .nav a.cta{background:var(--navy);color:#fff;}
+  .nav a.cta:hover{background:var(--blue);color:#fff;}
+
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px;}
+  section{padding:70px 0;border-bottom:1px solid var(--line);}
+  .eyebrow{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--blue);font-weight:600;margin-bottom:10px;}
+  h2.sec{font-size:30px;color:var(--navy);font-weight:700;margin-bottom:8px;line-height:1.15;}
+  .lead{font-size:15px;color:var(--grey);max-width:760px;margin-bottom:8px;}
+
+  /* HERO */
+  .hero{background:linear-gradient(150deg,#1F3A5F 0%,#22517f 55%,#2B7FB8 120%);color:#fff;padding:96px 0 88px;border:none;position:relative;overflow:hidden;}
+  .hero::after{content:'';position:absolute;right:-120px;top:-120px;width:460px;height:460px;border-radius:50%;background:radial-gradient(circle,rgba(143,205,236,.35),transparent 65%);}
+  .hero .wrap{position:relative;z-index:2;}
+  .hero-badge{display:inline-block;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);color:#fff;font-size:11px;letter-spacing:2px;text-transform:uppercase;padding:6px 16px;border-radius:30px;margin-bottom:24px;}
+  .hero h1{font-size:clamp(30px,5vw,52px);font-weight:800;line-height:1.08;margin-bottom:16px;}
+  .hero h1 em{font-style:normal;color:var(--sky);}
+  .hero p.sub{font-size:17px;color:rgba(255,255,255,.82);max-width:640px;margin-bottom:14px;}
+  .hero p.evo{font-size:15px;font-style:italic;color:#fff;font-weight:500;border-left:3px solid var(--gold);padding-left:14px;margin:22px 0 30px;}
+  .hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.15);border-radius:12px;overflow:hidden;max-width:760px;}
+  .hs{background:rgba(255,255,255,.07);padding:18px 14px;text-align:center;}
+  .hs .n{font-family:'Poppins';font-size:26px;font-weight:800;color:#fff;}
+  .hs .l{font-size:10.5px;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.6);margin-top:3px;}
+  @media(max-width:680px){.hero-stats{grid-template-columns:repeat(2,1fr);}}
+
+  /* GLANCE TABLE */
+  .gtable{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:26px;}
+  @media(max-width:760px){.gtable{grid-template-columns:1fr;}}
+  .grow{background:#fff;border:1px solid var(--line);border-radius:10px;padding:16px 18px;border-left:4px solid var(--sky);}
+  .grow .k{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--blue);font-weight:600;margin-bottom:4px;}
+  .grow .v{font-size:13.5px;color:var(--ink);}
+
+  /* ECOSYSTEM INTERACTIVE */
+  .evo-wrap{display:grid;grid-template-columns:1fr 1.3fr;gap:28px;margin-top:30px;align-items:start;}
+  @media(max-width:840px){.evo-wrap{grid-template-columns:1fr;}}
+  .evo-steps{display:flex;flex-direction:column;gap:10px;}
+  .evo-step{display:flex;gap:14px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 18px;cursor:pointer;transition:.22s;position:relative;}
+  .evo-step:hover{border-color:var(--blue);transform:translateX(4px);}
+  .evo-step.active{background:var(--navy);border-color:var(--navy);box-shadow:0 10px 26px rgba(31,58,95,.22);}
+  .evo-step.active .es-t{color:#fff;}
+  .evo-step.active .es-n{background:var(--gold);color:#fff;}
+  .es-n{flex:none;width:34px;height:34px;border-radius:50%;background:var(--sky-soft);color:var(--navy);font-family:'Poppins';font-weight:700;display:flex;align-items:center;justify-content:center;font-size:15px;}
+  .es-t{font-family:'Poppins';font-weight:600;font-size:14.5px;color:var(--navy);}
+  .es-s{font-size:11.5px;color:var(--grey);}
+  .evo-step.active .es-s{color:rgba(255,255,255,.7);}
+  .evo-detail{background:#fff;border:1px solid var(--line);border-radius:14px;padding:28px;min-height:260px;}
+  .evo-detail h3{font-size:20px;color:var(--navy);margin-bottom:6px;}
+  .evo-detail .tagline{font-size:12.5px;color:var(--blue);font-weight:600;margin-bottom:16px;letter-spacing:.5px;}
+  .evo-detail ul{list-style:none;display:flex;flex-direction:column;gap:9px;}
+  .evo-detail li{font-size:13.5px;padding-left:24px;position:relative;color:var(--ink);}
+  .evo-detail li::before{content:'▸';position:absolute;left:4px;color:var(--blue);font-weight:700;}
+  .evo-note{margin-top:16px;font-size:12.5px;font-style:italic;color:var(--grey);border-top:1px dashed var(--line);padding-top:14px;}
+
+  /* PRODUCT CARDS */
+  .pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px;margin-top:28px;}
+  .pcard{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px;transition:.2s;border-top:3px solid var(--sky);}
+  .pcard:hover{box-shadow:0 12px 28px rgba(31,58,95,.12);transform:translateY(-3px);border-top-color:var(--blue);}
+  .pcard .ic{font-size:24px;margin-bottom:8px;}
+  .pcard h3{font-size:14.5px;color:var(--navy);margin-bottom:5px;}
+  .pcard p{font-size:12.5px;color:var(--grey);}
+
+  /* CLIENTS */
+  .clients{margin-top:26px;}
+  .ctier{margin-bottom:20px;}
+  .ctier h4{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--blue);font-weight:600;margin-bottom:12px;}
+  .chips{display:flex;flex-wrap:wrap;gap:9px;}
+  .chip{background:#fff;border:1px solid var(--line);border-radius:8px;padding:9px 15px;font-size:13px;font-weight:500;color:var(--navy);font-family:'Poppins';transition:.18s;}
+  .chip:hover{background:var(--navy);color:#fff;border-color:var(--navy);}
+  .chip.more{background:var(--sky-soft);border-style:dashed;color:var(--blue);}
+
+  /* SOURCING TABS */
+  .tabs{display:flex;flex-wrap:wrap;gap:8px;margin:26px 0 18px;}
+  .tab{padding:9px 18px;border-radius:24px;border:1px solid var(--line);background:#fff;font-size:13px;font-weight:600;color:var(--grey);cursor:pointer;transition:.2s;font-family:'Poppins';}
+  .tab:hover{border-color:var(--blue);color:var(--navy);}
+  .tab.active{background:var(--blue);color:#fff;border-color:var(--blue);}
+  .tab-panel{background:#fff;border:1px solid var(--line);border-radius:14px;padding:26px 28px;display:none;animation:fade .3s ease;}
+  .tab-panel.active{display:block;}
+  @keyframes fade{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:none;}}
+  .tab-panel h3{font-size:18px;color:var(--navy);margin-bottom:8px;}
+  .tab-panel p{font-size:13.5px;color:var(--ink);}
+
+  /* STANDARDS */
+  .std-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px;margin-top:24px;}
+  .std{background:#fff;border:1px solid var(--line);border-radius:11px;padding:18px;display:flex;gap:13px;align-items:flex-start;}
+  .std .si{flex:none;width:38px;height:38px;border-radius:9px;background:var(--sky-soft);display:flex;align-items:center;justify-content:center;font-size:19px;}
+  .std .st{font-family:'Poppins';font-weight:600;font-size:13.5px;color:var(--navy);margin-bottom:3px;}
+  .std .sb{font-size:12px;color:var(--grey);}
+  .certs{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px;}
+  .cert{background:var(--navy);color:#fff;font-family:'Poppins';font-weight:600;font-size:11.5px;letter-spacing:1px;padding:7px 14px;border-radius:6px;}
+
+  /* ENGAGEMENT TIMELINE */
+  .tl{margin-top:30px;position:relative;}
+  .tl::before{content:'';position:absolute;left:19px;top:8px;bottom:8px;width:2px;background:var(--line);}
+  .tli{position:relative;padding-left:56px;margin-bottom:22px;}
+  .tli .dot{position:absolute;left:8px;top:2px;width:24px;height:24px;border-radius:50%;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Poppins';font-weight:700;font-size:12px;box-shadow:0 0 0 4px var(--sky-soft);}
+  .tli h3{font-size:15px;color:var(--navy);margin-bottom:2px;}
+  .tli p{font-size:13px;color:var(--grey);}
+
+  /* WHY */
+  .why{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin-top:26px;}
+  .wcard{background:linear-gradient(160deg,#fff,#f1f7fc);border:1px solid var(--line);border-radius:13px;padding:22px;border-left:4px solid var(--gold);}
+  .wcard h3{font-size:14.5px;color:var(--navy);margin-bottom:6px;}
+  .wcard p{font-size:12.5px;color:var(--grey);}
+
+  /* CTA / FOOTER */
+  .cta-band{background:linear-gradient(150deg,#1F3A5F,#2B7FB8);color:#fff;text-align:center;border:none;}
+  .cta-band h2{color:#fff;font-size:30px;margin-bottom:12px;}
+  .cta-band p{color:rgba(255,255,255,.8);max-width:560px;margin:0 auto 26px;font-size:15px;}
+  .cta-row{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;font-size:13.5px;}
+  .cta-row span{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);padding:10px 20px;border-radius:30px;}
+  footer{background:var(--ink);color:rgba(255,255,255,.5);text-align:center;font-size:11px;letter-spacing:1px;padding:22px;}
+  .print{margin-top:26px;}
+  .print button{background:#fff;color:var(--navy);border:none;padding:11px 22px;border-radius:30px;font-family:'Poppins';font-weight:600;font-size:13px;cursor:pointer;transition:.2s;}
+  .print button:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.25);}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<div class="nav"><div class="nav-in">
+  <div class="nav-logo">BANGKOK QUALITY <span>MILK PRODUCTS</span></div>
+  <a href="#about">About</a>
+  <a href="#products">Products</a>
+  <a href="#clients">Clients</a>
+  <a href="#ecosystem">Ecosystem</a>
+  <a href="#sourcing">Sourcing</a>
+  <a href="#engage">Engagement</a>
+  <a href="#contact" class="cta">Partner With Us</a>
+</div></div>
+
+<!-- HERO -->
+<header class="hero"><div class="wrap">
+  <div class="hero-badge">Supply Partnership Profile · For Vendor Partners</div>
+  <h1>Premium Dairy. <em>Integrated Food Ecosystem.</em></h1>
+  <p class="sub">Bangkok Quality Milk Products Co., Ltd. — artisanal dairy crafted in the Eastern Mediterranean tradition, serving Thailand's leading hotels, restaurants and cafés since 2006.</p>
+  <p class="evo">From a Dairy Products Company to a Food Ecosystem Business.</p>
+  <div class="hero-stats">
+    <div class="hs"><div class="n">2006</div><div class="l">Established</div></div>
+    <div class="hs"><div class="n">5</div><div class="l">Business Pillars</div></div>
+    <div class="hs"><div class="n">15+</div><div class="l">HORECA Brands</div></div>
+    <div class="hs"><div class="n">1</div><div class="l">Ecosystem Platform</div></div>
+  </div>
+</div></header>
+
+<!-- ABOUT / GLANCE -->
+<section id="about"><div class="wrap">
+  <div class="eyebrow">Company at a Glance</div>
+  <h2 class="sec">Who We Are</h2>
+  <p class="lead">An established Thai food business that has evolved from an artisanal dairy producer into an integrated food ecosystem spanning dairy, bakery, packaging, distribution and food-service solutions. This profile emphasizes our sourcing footprint, infrastructure and the standards we expect from supply partners.</p>
+  <div class="gtable">
+    <div class="grow"><div class="k">Legal Entity</div><div class="v">Bangkok Quality Milk Products Co., Ltd.</div></div>
+    <div class="grow"><div class="k">Founded</div><div class="v">2006 · Bangkok, Thailand</div></div>
+    <div class="grow"><div class="k">Core Heritage</div><div class="v">Artisanal dairy rooted in Eastern Mediterranean / authentic Greek yogurt craft</div></div>
+    <div class="grow"><div class="k">Consumer Brands</div><div class="v">Yogi (dairy solutions) · Yogurt Culture (retail HORECA & café concept)</div></div>
+    <div class="grow"><div class="k">Channel Base</div><div class="v">Hotels, Restaurants & Cafés (HORECA) + own retail kiosks + delivery</div></div>
+    <div class="grow"><div class="k">Distribution Hub</div><div class="v">Warehouse & Distribution Center, Sukhumvit 109, Samut Prakan</div></div>
+  </div>
+</div></section>
+
+<!-- VISION / PRODUCTS -->
+<section id="products"><div class="wrap">
+  <div class="eyebrow">Dairy Product Portfolio</div>
+  <h2 class="sec">What We Craft</h2>
+  <p class="lead">Our core artisanal dairy line is crafted for both retail and HORECA food-service applications — using only the freshest natural ingredients.</p>
+  <div class="pgrid">
+    <div class="pcard"><div class="ic">🥛</div><h3>Greek Yogurt</h3><p>Authentic thick & creamy, 100% whole milk and live cultures, traditionally strained for sweet and savory dishes.</p></div>
+    <div class="pcard"><div class="ic">🍶</div><h3>Plain Yogurt</h3><p>Unsweetened, smooth and refreshing — versatile for drinking, cooking, or blending into beverages and sauces.</p></div>
+    <div class="pcard"><div class="ic">🥥</div><h3>Coconut Yogurt <span style="font-size:10px;color:#9aa3ad">(Vegan)</span></h3><p>Creamy coconut yogurt with fresh coconut milk; perfect for breakfast bowls, smoothies and desserts.</p></div>
+    <div class="pcard"><div class="ic">🥄</div><h3>Sour Cream</h3><p>Rich, creamy traditional sour cream with a smooth texture — ideal for cooking, baking and sauces.</p></div>
+    <div class="pcard"><div class="ic">🥒</div><h3>Tzatziki</h3><p>Traditional Mediterranean dip of yogurt, cucumber and dill — for grilled dishes, wraps and breads.</p></div>
+    <div class="pcard"><div class="ic">🧀</div><h3>Feta Cheese</h3><p>Authentic Mediterranean feta, firm texture (in brine or olive oil), 500g pack — cubed or whole chunk.</p></div>
+    <div class="pcard"><div class="ic">🫓</div><h3>Spreadable Labane</h3><p>Creamy spreadable labane topped with aromatic za'atar — a dip or spread for breads and platters.</p></div>
+    <div class="pcard"><div class="ic">⚪</div><h3>Labane Cheese Balls</h3><p>Handcrafted labane balls with za'atar; firm, rich and creamy — ideal for Mediterranean platters.</p></div>
+  </div>
+  <p class="lead" style="margin-top:26px;"><strong style="color:var(--navy)">Yogurt Culture</strong> — our retail brand — extends the line into Greek yogurt bowls, açaí, soft serve, smoothies and frozen-yogurt shakes (Ready to Glow, Energy Sip, Biscoff Shake, Oreo Choco Shake & more), doubling as a living showroom for the categories we source.</p>
+</div></section>
+
+<!-- CLIENTS -->
+<section id="clients"><div class="wrap">
+  <div class="eyebrow">Trusted By</div>
+  <h2 class="sec">HORECA Client Network</h2>
+  <p class="lead">Our dairy and food-service products are trusted by leading hotels, restaurant groups and venues across Thailand — an established demand base that underpins recurring, scalable procurement volume for our supply partners.</p>
+  <div class="clients">
+    <div class="ctier"><h4>Hotels & Hospitality</h4><div class="chips">
+      <span class="chip">St. Regis</span><span class="chip">Waldorf Astoria</span><span class="chip">Four Seasons</span>
+      <span class="chip">W Hotels</span><span class="chip">Marriott</span><span class="chip">Dusit Thani</span>
+      <span class="chip">Centara Grand</span><span class="chip">Chatrium Grand</span><span class="chip">The Westin Grande Sukhumvit</span>
+      <span class="chip">Le Meridien</span>
+    </div></div>
+    <div class="ctier"><h4>Venues, Restaurant Groups & Brands</h4><div class="chips">
+      <span class="chip">QSNCC</span><span class="chip">Kuppa</span><span class="chip">AVRA</span>
+      <span class="chip">The Duke's Restaurant Group</span><span class="chip">Nadimos</span>
+      <span class="chip">Absolute Fitfood</span><span class="chip">ARGO</span><span class="chip more">+ and more</span>
+    </div></div>
+  </div>
+</div></section>
+
+<!-- ECOSYSTEM INTERACTIVE -->
+<section id="ecosystem"><div class="wrap">
+  <div class="eyebrow">Business Evolution</div>
+  <h2 class="sec">From Dairy to a Food Ecosystem</h2>
+  <p class="lead">Click each stage to explore how we expanded across the food value chain. Working closely with food operators and consumers, we identified strong synergies across adjacent categories.</p>
+  <div class="evo-wrap">
+    <div class="evo-steps" id="evoSteps">
+      <div class="evo-step active" data-i="0"><div class="es-n">1</div><div><div class="es-t">Dairy Products Business</div><div class="es-s">The founding core</div></div></div>
+      <div class="evo-step" data-i="1"><div class="es-n">2</div><div><div class="es-t">Bakery Line-up Expansion</div><div class="es-s">Dairy × bakery synergies</div></div></div>
+      <div class="evo-step" data-i="2"><div class="es-n">3</div><div><div class="es-t">Food Packaging Solution</div><div class="es-s">Capturing supply-chain value</div></div></div>
+      <div class="evo-step" data-i="3"><div class="es-n">4</div><div><div class="es-t">Integrated Food Ecosystem</div><div class="es-s">One strategic platform</div></div></div>
+    </div>
+    <div class="evo-detail" id="evoDetail"></div>
+  </div>
+</div></section>
+
+<!-- SOURCING TABS -->
+<section id="sourcing"><div class="wrap">
+  <div class="eyebrow">Supply Partnership Framework</div>
+  <h2 class="sec">Where We Source</h2>
+  <p class="lead">As an integrated food ecosystem, we engage vendor partners across multiple sourcing categories. Select a category to see representative scope — a starting point to align volume and terms.</p>
+  <div class="tabs" id="srcTabs">
+    <div class="tab active" data-i="0">Dairy Inputs</div>
+    <div class="tab" data-i="1">Bakery Supply</div>
+    <div class="tab" data-i="2">Food Packaging</div>
+    <div class="tab" data-i="3">Ingredients & Toppings</div>
+    <div class="tab" data-i="4">Equipment & Logistics</div>
+  </div>
+  <div id="srcPanels"></div>
+
+  <h2 class="sec" style="font-size:22px;margin-top:48px;">What We Look For in a Supply Partner</h2>
+  <div class="std-grid">
+    <div class="std"><div class="si">📜</div><div><div class="st">Certified Quality</div><div class="sb">Recognized food-safety credentials — FDA, SGS / ISO 9001, MSDS, Kosher / UKAS where relevant.</div></div></div>
+    <div class="std"><div class="si">✨</div><div><div class="st">Authenticity</div><div class="sb">Consistent quality aligned with our artisanal, premium positioning.</div></div></div>
+    <div class="std"><div class="si">🔄</div><div><div class="st">Supply Continuity</div><div class="sb">Reliable lead-time performance to serve recurring HORECA demand.</div></div></div>
+    <div class="std"><div class="si">💰</div><div><div class="st">Competitive Terms</div><div class="sb">Transparent commercial terms with room to scale as volume grows.</div></div></div>
+    <div class="std"><div class="si">🌱</div><div><div class="st">Sustainability</div><div class="sb">Responsible orientation across materials, sourcing and operations.</div></div></div>
+    <div class="std"><div class="si">🛠️</div><div><div class="st">Co-Development</div><div class="sb">Capability to support customization, seasonal variety and joint NPD.</div></div></div>
+  </div>
+  <p class="lead" style="margin-top:24px;font-size:13px;">Our packaging operations carry international quality credentials:</p>
+  <div class="certs">
+    <span class="cert">MSDS</span><span class="cert">SGS / ISO 9001</span><span class="cert">FDA</span><span class="cert">KOSHER</span><span class="cert">UKAS</span>
+  </div>
+</div></section>
+
+<!-- ENGAGEMENT -->
+<section id="engage"><div class="wrap">
+  <div class="eyebrow">How We Work Together</div>
+  <h2 class="sec">Engagement Model</h2>
+  <p class="lead">A clear, staged path from first conversation to a recurring framework agreement.</p>
+  <div class="tl">
+    <div class="tli"><div class="dot">1</div><h3>Introduction & Capability Exchange</h3><p>Share catalog, certifications, references and pricing structure.</p></div>
+    <div class="tli"><div class="dot">2</div><h3>Sampling & Evaluation</h3><p>Product testing against our quality and application standards.</p></div>
+    <div class="tli"><div class="dot">3</div><h3>Commercial Alignment</h3><p>Confirm specifications, volume tiers, lead times and payment terms.</p></div>
+    <div class="tli"><div class="dot">4</div><h3>Pilot Order & Validation</h3><p>Initial purchase order with quality and delivery review.</p></div>
+    <div class="tli"><div class="dot">5</div><h3>Scale-up & Framework Agreement</h3><p>Recurring supply, volume-based pricing and joint planning.</p></div>
+  </div>
+
+  <h2 class="sec" style="font-size:22px;margin-top:44px;">Why Partner With Us</h2>
+  <div class="why">
+    <div class="wcard"><h3>Established Demand Base</h3><p>Trusted by leading HORECA brands across Thailand — recurring, scalable procurement volume.</p></div>
+    <div class="wcard"><h3>Multi-Category Reach</h3><p>Dairy, bakery, packaging, distribution and food-service in one ecosystem — expanding wallet share per partner.</p></div>
+    <div class="wcard"><h3>Owned Distribution</h3><p>Warehouse and distribution capability at Sukhumvit 109 supporting reliable fulfillment.</p></div>
+    <div class="wcard"><h3>Brand-Led Pull</h3><p>Yogurt Culture retail provides a living showroom and continuous consumer engagement.</p></div>
+    <div class="wcard"><h3>Long-Term Orientation</h3><p>We build durable, mutually rewarding supply partnerships — not one-off transactions.</p></div>
+  </div>
+</div></section>
+
+<!-- CTA -->
+<section id="contact" class="cta-band"><div class="wrap">
+  <h2>Let's Build a Supply Partnership</h2>
+  <p>We welcome a conversation with prospective supply partners to align on scope, specifications, volume and commercial terms.</p>
+  <div class="cta-row">
+    <span>🏢 Bangkok Quality Milk Products Co., Ltd.</span>
+    <span>📦 Distribution Center · Sukhumvit 109, Samut Prakan 10270</span>
+    <span>🥛 Yogi · Yogurt Culture</span>
+  </div>
+  <div class="print"><button onclick="window.print()">⤓ Save / Print this Profile</button></div>
+</div></section>
+
+<footer>BANGKOK QUALITY MILK PRODUCTS CO., LTD. · SUPPLY PARTNERSHIP PROFILE · STRICTLY CONFIDENTIAL · EST. 2006</footer>
+
+<script>
+  // Ecosystem evolution interactive
+  const evoData = [
+    { t:"Dairy Products Business", tag:"STAGE 1 · THE FOUNDING CORE",
+      items:["Authentic Greek yogurt and Mediterranean dairy as the founding core","Crafted from 100% whole milk and live cultures","Premium positioning rooted in Eastern Mediterranean tradition"],
+      note:"Where it all began — artisanal craft passed down from the first Mediterranean founder." },
+    { t:"Bakery Line-up Expansion", tag:"STAGE 2 · DAIRY × BAKERY SYNERGIES",
+      items:["Bakery Ingredients","Bakery Products","Frozen Bakery","Ready-to-Bake Solutions","Café & Food-Service Applications"],
+      note:"Integrating dairy and bakery delivers more comprehensive customer solutions while increasing wallet share and engagement." },
+    { t:"Food Packaging Solution", tag:"STAGE 3 · CAPTURING SUPPLY-CHAIN VALUE",
+      items:["Food Packaging Materials","Sustainable Packaging Solutions","Retail Packaging","Food-Service Packaging","Customized Packaging Solutions"],
+      note:"Packaging is no longer a supporting function but an essential component of customer experience and brand value. Backed by MSDS, SGS/ISO 9001, FDA, Kosher and UKAS credentials." },
+    { t:"Integrated Food Ecosystem", tag:"STAGE 4 · ONE STRATEGIC PLATFORM",
+      items:["Connects Dairy, Bakery, Packaging, Distribution & Food-Service","Scalable growth and recurring customer engagement","Operational synergies across the value chain","Sustainable long-term value creation"],
+      note:"Participating across multiple touchpoints in the food value chain rather than relying on a single product category." },
+  ];
+  const evoDetail = document.getElementById('evoDetail');
+  function renderEvo(i){
+    const d = evoData[i];
+    evoDetail.innerHTML = '<div class="tagline">'+d.tag+'</div><h3>'+d.t+'</h3><ul>'+
+      d.items.map(x=>'<li>'+x+'</li>').join('')+'</ul><div class="evo-note">'+d.note+'</div>';
+  }
+  document.querySelectorAll('#evoSteps .evo-step').forEach(s=>{
+    s.addEventListener('click',()=>{
+      document.querySelectorAll('#evoSteps .evo-step').forEach(x=>x.classList.remove('active'));
+      s.classList.add('active');
+      renderEvo(+s.dataset.i);
+    });
+  });
+  renderEvo(0);
+
+  // Sourcing tabs
+  const srcData = [
+    { t:"Dairy Inputs", b:"Fresh milk, cream, cultures and dairy ingredients supporting Greek yogurt, plain and coconut yogurt, sour cream, feta and labane production." },
+    { t:"Bakery Supply", b:"Bakery ingredients, finished bakery products, frozen bakery and ready-to-bake solutions for café and food-service applications." },
+    { t:"Food Packaging", b:"Food-grade packaging materials, sustainable / retail / food-service packaging and customized packaging formats." },
+    { t:"Ingredients & Toppings", b:"Granola, fruit, nuts, spreads, sauces and functional add-ins for the Yogurt Culture menu lineup." },
+    { t:"Equipment & Logistics", b:"Cold-chain, storage, soft-serve and processing equipment, and distribution services supporting the Sukhumvit 109 hub." },
+  ];
+  const srcPanels = document.getElementById('srcPanels');
+  srcPanels.innerHTML = srcData.map((d,i)=>'<div class="tab-panel'+(i===0?' active':'')+'" data-p="'+i+'"><h3>'+d.t+'</h3><p>'+d.b+'</p></div>').join('');
+  document.querySelectorAll('#srcTabs .tab').forEach(t=>{
+    t.addEventListener('click',()=>{
+      document.querySelectorAll('#srcTabs .tab').forEach(x=>x.classList.remove('active'));
+      document.querySelectorAll('#srcPanels .tab-panel').forEach(x=>x.classList.remove('active'));
+      t.classList.add('active');
+      document.querySelector('#srcPanels .tab-panel[data-p="'+t.dataset.i+'"]').classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>

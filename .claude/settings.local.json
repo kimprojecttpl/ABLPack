@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(gh auth *)",
+      "PowerShell($g = Get-Command git -ErrorAction SilentlyContinue; if\\($g\\){\"git: $\\($g.Source\\)\"}else{\"git: NOT FOUND\"}; $h = Get-Command gh -ErrorAction SilentlyContinue; if\\($h\\){\"gh: $\\($h.Source\\)\"}else{\"gh: NOT FOUND\"})",
+      "PowerShell(git init)",
+      "PowerShell(git branch -M main)",
+      "PowerShell(git add -A)"
+    ]
+  }
+}

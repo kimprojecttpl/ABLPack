@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ABLPACK × Bangkok Quality Milk Products — Partnership Proposal & RFQ</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1F3A5F;--blue:#2B7FB8;--sky:#8FCDEC;--sky-soft:#EAF3FA;
+    --red:#C0392B;--grey:#5A6470;--ink:#1c2530;--line:rgba(31,58,95,.12);
+    --bg:#F6FAFD;--white:#fff;--gold:#C8A24B;
+    --c-round:#2B7FB8;--c-oval:#4FA678;--c-rect:#C8893B;--c-square:#8E6FB8;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--bg);line-height:1.65;}
+  h1,h2,h3,.brand{font-family:'Poppins',sans-serif;}
+  .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.93);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+  .nav-in{max-width:1180px;margin:0 auto;display:flex;align-items:center;gap:6px;padding:11px 24px;flex-wrap:wrap;}
+  .nav-logo{font-family:'Poppins';font-weight:800;color:var(--navy);font-size:14px;letter-spacing:.3px;margin-right:auto;}
+  .nav-logo span{color:var(--blue);}
+  .nav a{font-size:12px;color:var(--grey);text-decoration:none;padding:6px 10px;border-radius:20px;transition:.2s;font-weight:500;}
+  .nav a:hover{background:var(--sky-soft);color:var(--navy);}
+  .nav a.cta{background:var(--navy);color:#fff;}
+  .nav a.cta:hover{background:var(--blue);}
+  @media(max-width:900px){.nav a:not(.cta){display:none;}}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px;}
+  section{padding:64px 0;border-bottom:1px solid var(--line);}
+  .eyebrow{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--blue);font-weight:600;margin-bottom:10px;}
+  h2.sec{font-size:29px;color:var(--navy);font-weight:700;margin-bottom:8px;line-height:1.15;}
+  .lead{font-size:15px;color:var(--grey);max-width:780px;margin-bottom:8px;}
+  .pill{display:inline-block;background:var(--sky-soft);color:var(--blue);font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding:4px 12px;border-radius:20px;margin-bottom:14px;}
+
+  /* HERO */
+  .hero{background:linear-gradient(150deg,#1F3A5F 0%,#22517f 55%,#2B7FB8 120%);color:#fff;padding:80px 0 70px;border:none;position:relative;overflow:hidden;}
+  .hero::after{content:'';position:absolute;right:-120px;top:-120px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(143,205,236,.32),transparent 65%);}
+  .hero .wrap{position:relative;z-index:2;}
+  .hero-badge{display:inline-block;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);color:#fff;font-size:11px;letter-spacing:2px;text-transform:uppercase;padding:6px 16px;border-radius:30px;margin-bottom:22px;}
+  .hero h1{font-size:clamp(28px,4.6vw,46px);font-weight:800;line-height:1.1;margin-bottom:14px;}
+  .hero h1 em{font-style:normal;color:var(--sky);}
+  .hero p.sub{font-size:16px;color:rgba(255,255,255,.82);max-width:680px;margin-bottom:22px;}
+  .hero-meta{display:flex;flex-wrap:wrap;gap:10px;}
+  .hero-meta span{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);padding:8px 15px;border-radius:24px;font-size:12.5px;}
+
+  /* SNAPSHOT */
+  .snap{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:26px;}
+  @media(max-width:760px){.snap{grid-template-columns:repeat(2,1fr);}}
+  .scard{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px;text-align:center;border-top:3px solid var(--sky);}
+  .scard .n{font-family:'Poppins';font-size:28px;font-weight:800;color:var(--navy);}
+  .scard .l{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--grey);margin-top:4px;}
+
+  /* CLIENTS */
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;}
+  .chip{background:#fff;border:1px solid var(--line);border-radius:8px;padding:8px 14px;font-size:12.5px;font-weight:500;color:var(--navy);font-family:'Poppins';transition:.18s;}
+  .chip:hover{background:var(--navy);color:#fff;border-color:var(--navy);}
+  .chip.more{background:var(--sky-soft);border-style:dashed;color:var(--blue);}
+
+  /* WHY GRID */
+  .wgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px;margin-top:24px;}
+  .wcard{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px;display:flex;gap:13px;align-items:flex-start;}
+  .wcard .si{flex:none;width:38px;height:38px;border-radius:9px;background:var(--sky-soft);display:flex;align-items:center;justify-content:center;font-size:19px;}
+  .wcard .st{font-family:'Poppins';font-weight:600;font-size:13.5px;color:var(--navy);margin-bottom:3px;}
+  .wcard .sb{font-size:12px;color:var(--grey);}
+
+  /* SKU TABLE */
+  .filters{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 4px;}
+  .fbtn{padding:8px 16px;border-radius:22px;border:1px solid var(--line);background:#fff;font-size:12.5px;font-weight:600;color:var(--grey);cursor:pointer;transition:.2s;font-family:'Poppins';display:flex;align-items:center;gap:7px;}
+  .fbtn:hover{border-color:var(--blue);color:var(--navy);}
+  .fbtn.active{background:var(--navy);color:#fff;border-color:var(--navy);}
+  .fdot{width:9px;height:9px;border-radius:50%;}
+  .tablewrap{overflow-x:auto;margin-top:14px;border:1px solid var(--line);border-radius:12px;}
+  table.sku{width:100%;border-collapse:collapse;font-size:13px;min-width:760px;background:#fff;}
+  table.sku thead th{background:var(--navy);color:#fff;font-family:'Poppins';font-weight:600;font-size:11.5px;letter-spacing:.4px;padding:12px 12px;text-align:left;position:sticky;top:0;}
+  table.sku td{padding:10px 12px;border-bottom:1px solid var(--line);}
+  table.sku tbody tr:hover{background:var(--sky-soft);}
+  .sku-id{font-family:'Poppins';font-weight:700;}
+  .shape-tag{display:inline-block;font-size:9.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;padding:2px 8px;border-radius:5px;color:#fff;}
+  .pcs{font-family:'Poppins';font-weight:700;color:var(--blue);text-align:center;}
+  .tnote{font-size:12px;color:var(--grey);margin-top:12px;font-style:italic;}
+
+  /* REQUEST CALLOUT */
+  .req{background:linear-gradient(160deg,#fff,#fdf4ef);border:1px solid rgba(192,57,43,.25);border-left:5px solid var(--red);border-radius:14px;padding:26px 28px;margin-top:26px;}
+  .req h3{font-size:18px;color:var(--red);margin-bottom:12px;}
+  .req .rrow{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:8px;}
+  @media(max-width:680px){.req .rrow{grid-template-columns:1fr;}}
+  .rbox{background:#fff;border:1px solid var(--line);border-radius:10px;padding:16px;}
+  .rbox .rt{font-family:'Poppins';font-weight:700;font-size:13.5px;color:var(--navy);margin-bottom:4px;}
+  .rbox .rb{font-size:12.5px;color:var(--grey);}
+
+  /* GTM / APPLICATIONS */
+  .steps{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;margin-top:24px;}
+  .step{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px;border-top:3px solid var(--gold);}
+  .step .num{font-family:'Poppins';font-weight:800;font-size:13px;color:var(--gold);background:#fdf6e7;width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:10px;}
+  .step h3{font-size:14px;color:var(--navy);margin-bottom:5px;}
+  .step p{font-size:12.5px;color:var(--grey);}
+
+  /* RETAIL PACK */
+  .packrow{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px;}
+  .pk{background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px 22px;text-align:center;font-family:'Poppins';}
+  .pk .pn{font-weight:800;font-size:22px;color:var(--navy);}
+  .pk .pl{font-size:11px;color:var(--grey);letter-spacing:1px;text-transform:uppercase;}
+
+  /* RFQ CHECKLIST */
+  .rfq{display:grid;grid-template-columns:1fr 1fr;gap:10px 22px;margin-top:22px;}
+  @media(max-width:720px){.rfq{grid-template-columns:1fr;}}
+  .rfq-item{display:flex;gap:11px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:9px;padding:13px 15px;}
+  .rfq-item .ck{flex:none;width:22px;height:22px;border-radius:6px;background:var(--sky-soft);color:var(--blue);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;}
+  .rfq-item p{font-size:12.5px;color:var(--ink);}
+
+  /* TERMS */
+  .terms{margin-top:22px;border:1px solid var(--line);border-radius:12px;overflow:hidden;}
+  .trow{display:grid;grid-template-columns:200px 1fr;border-bottom:1px solid var(--line);}
+  .trow:last-child{border-bottom:none;}
+  .trow .tk{background:var(--sky-soft);font-family:'Poppins';font-weight:600;font-size:12.5px;color:var(--navy);padding:13px 16px;}
+  .trow .tv{padding:13px 16px;font-size:13px;color:var(--ink);background:#fff;}
+  @media(max-width:600px){.trow{grid-template-columns:1fr;}.trow .tk{border-bottom:1px solid var(--line);}}
+
+  /* CTA */
+  .cta-band{background:linear-gradient(150deg,#1F3A5F,#2B7FB8);color:#fff;text-align:center;border:none;}
+  .cta-band h2{color:#fff;font-size:29px;margin-bottom:12px;}
+  .cta-band p{color:rgba(255,255,255,.82);max-width:580px;margin:0 auto 24px;font-size:15px;}
+  .cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;font-size:13px;}
+  .cta-row span{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);padding:10px 18px;border-radius:28px;}
+  .print{margin-top:24px;}
+  .print button{background:#fff;color:var(--navy);border:none;padding:11px 24px;border-radius:30px;font-family:'Poppins';font-weight:600;font-size:13px;cursor:pointer;transition:.2s;}
+  .print button:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.25);}
+  footer{background:var(--ink);color:rgba(255,255,255,.5);text-align:center;font-size:11px;letter-spacing:1px;padding:22px;}
+  @media print{.nav,.filters{display:none;}.tablewrap{overflow:visible;}table.sku{min-width:0;}section{padding:24px 0;}}
+</style>
+</head>
+<body>
+
+<div class="nav"><div class="nav-in">
+  <div class="nav-logo">BANGKOK QUALITY <span>MILK PRODUCTS</span> × ABLPACK</div>
+  <a href="#about">Company</a>
+  <a href="#why">Why ABLPACK</a>
+  <a href="#sku">SKU Inquiry</a>
+  <a href="#request">Mixed Order</a>
+  <a href="#rfq">RFQ</a>
+  <a href="#contact" class="cta">Next Steps</a>
+</div></div>
+
+<!-- HERO -->
+<header class="hero"><div class="wrap">
+  <div class="hero-badge">Direct-Import Partnership Proposal &amp; RFQ · Strictly Confidential</div>
+  <h1>Smooth Wall Aluminum Foil Series — <em>Moon Cake Box Inquiry</em></h1>
+  <p class="sub">A proposal from Bangkok Quality Milk Products Co., Ltd. (Yogi · Yogurt Culture) to Shanghai ABL Baking Pack Co., Ltd. — requesting quotation, trade terms, and a flexible first mixed-LCL trial order for the 2026 Smooth Wall series.</p>
+  <div class="hero-meta">
+    <span>📄 Ref: ABLPACK 2026-01EN</span>
+    <span>📦 Phase 1: Moon Cake Box · 12 SKUs</span>
+    <span>🚢 1st Order: Mixed LCL</span>
+    <span>🧾 Duty 0% via Form E</span>
+  </div>
+</div></header>
+
+<!-- ABOUT -->
+<section id="about"><div class="wrap">
+  <div class="eyebrow">The Requesting Company</div>
+  <h2 class="sec">Who We Are</h2>
+  <p class="lead">Bangkok Quality Milk Products Co., Ltd. (founded 2006) is an integrated food ecosystem spanning dairy, bakery, packaging, distribution and food-service, under the brands <strong style="color:var(--navy)">Yogi</strong> and <strong style="color:var(--navy)">Yogurt Culture</strong>. Our established HORECA demand base provides recurring, scalable volume — the foundation for a long-term supply partnership.</p>
+  <div class="snap">
+    <div class="scard"><div class="n">2006</div><div class="l">Established</div></div>
+    <div class="scard"><div class="n">5</div><div class="l">Business Pillars</div></div>
+    <div class="scard"><div class="n">15+</div><div class="l">HORECA Brands</div></div>
+    <div class="scard"><div class="n">0%</div><div class="l">Import Duty (Form E)</div></div>
+  </div>
+  <p class="lead" style="margin-top:26px;margin-bottom:0;"><strong style="color:var(--navy)">Trusted by leading HORECA brands across Thailand:</strong></p>
+  <div class="chips">
+    <span class="chip">St. Regis</span><span class="chip">Waldorf Astoria</span><span class="chip">Four Seasons</span>
+    <span class="chip">W Hotels</span><span class="chip">Marriott</span><span class="chip">Dusit Thani</span>
+    <span class="chip">Centara Grand</span><span class="chip">Chatrium Grand</span><span class="chip">The Westin</span>
+    <span class="chip">Le Meridien</span><span class="chip">QSNCC</span><span class="chip">Kuppa</span>
+    <span class="chip">AVRA</span><span class="chip">The Duke's</span><span class="chip more">+ and more</span>
+  </div>
+</div></section>
+
+<!-- WHY ABLPACK -->
+<section id="why"><div class="wrap">
+  <div class="eyebrow">Supplier Fit</div>
+  <h2 class="sec">Why ABLPACK</h2>
+  <p class="lead">ABLPACK meets our requirements on quality, capability and credentials — the basis for selecting you as our direct-import packaging partner.</p>
+  <div class="wgrid">
+    <div class="wcard"><div class="si">📜</div><div><div class="st">Certified Quality</div><div class="sb">SGS / ISO 9001, FDA, EU standard, Kosher, UKAS, with MSDS documentation.</div></div></div>
+    <div class="wcard"><div class="si">🔥</div><div><div class="st">Smooth Wall Performance</div><div class="sb">Lacquer-coated aluminum — oven, microwave, air fryer, freezer (cold chain) and open-flame safe; high barrier.</div></div></div>
+    <div class="wcard"><div class="si">🏭</div><div><div class="st">Scale & Stock</div><div class="sb">10,000+ tons of foil/year, 63 production lines, in-house multi-cavity molds, extensive spot stock.</div></div></div>
+    <div class="wcard"><div class="si">🎨</div><div><div class="st">Customization</div><div class="sb">90+ colors and patterns, plus custom size, logo, lids, stickers, cards and base boxes.</div></div></div>
+  </div>
+</div></section>
+
+<!-- SKU INQUIRY -->
+<section id="sku"><div class="wrap">
+  <div class="eyebrow">Phase 1 Inquiry</div>
+  <h2 class="sec">Moon Cake Box — SKU Requirements</h2>
+  <p class="lead">Drawn from your 2026 Smooth Wall series, grouped by shape, with factory-standard pieces-per-box and container loadability. Filter by shape below. Dimensions are Top-Out × Base × Height. We request quotation in colored (lacquered) finish, with matching lids quoted as an option.</p>
+  <div class="filters" id="filters">
+    <div class="fbtn active" data-f="all">All <span style="opacity:.6">(12)</span></div>
+    <div class="fbtn" data-f="Round"><span class="fdot" style="background:var(--c-round)"></span>Round</div>
+    <div class="fbtn" data-f="Oval"><span class="fdot" style="background:var(--c-oval)"></span>Oval</div>
+    <div class="fbtn" data-f="Rectangular"><span class="fdot" style="background:var(--c-rect)"></span>Rectangular</div>
+    <div class="fbtn" data-f="Square"><span class="fdot" style="background:var(--c-square)"></span>Square</div>
+  </div>
+  <div class="tablewrap">
+    <table class="sku">
+      <thead><tr>
+        <th>SKU</th><th>Shape</th><th>Capacity</th><th>Top-Out</th><th>Base</th><th>Height</th><th>Pcs / Box</th><th>Boxes 20GP / 40GP</th>
+      </tr></thead>
+      <tbody id="skuBody"></tbody>
+    </table>
+  </div>
+  <p class="tnote" id="tnote"></p>
+  <p class="tnote" style="font-style:normal;"><strong style="color:var(--navy)">Note:</strong> AP125A offers the widest color/pattern library (90+ options) — a strong candidate as the hero SKU for market testing.</p>
+</div></section>
+
+<!-- MIXED ORDER REQUEST -->
+<section id="request"><div class="wrap">
+  <div class="eyebrow">Key Request</div>
+  <h2 class="sec">Mixed Assortment for the 1st LCL Order</h2>
+  <p class="lead">As this first order is for market study and product development, we respectfully request that ABLPACK accept a mixed-assortment consolidation within a single LCL shipment.</p>
+  <div class="req">
+    <h3>⚑ Please accept — in one consolidated LCL:</h3>
+    <div class="rrow">
+      <div class="rbox"><div class="rt">Mixed Model</div><div class="rb">Multiple SKUs across Round, Oval, Rectangular and Square in one order.</div></div>
+      <div class="rbox"><div class="rt">Mixed Color</div><div class="rb">Several colors per SKU from your standard library, to test market response.</div></div>
+      <div class="rbox"><div class="rt">Mixed Size</div><div class="rb">Small quantities per SKU/color — ideally down to one carton per SKU-color.</div></div>
+    </div>
+    <p style="font-size:12.5px;color:var(--grey);margin-top:16px;font-style:italic;">This flexibility lets us validate demand before committing to full-container volumes. We expect to scale to single-SKU and full-container orders once the market study and HORECA pilots confirm the assortment.</p>
+  </div>
+</div></section>
+
+<!-- APPLICATIONS / GTM -->
+<section id="gtm"><div class="wrap">
+  <div class="eyebrow">Study Tracks</div>
+  <h2 class="sec">Intended Applications &amp; Go-to-Market</h2>
+  <p class="lead">The trial inventory will be deployed across four study tracks to build the distribution and marketing business.</p>
+  <div class="steps">
+    <div class="step"><div class="num">1</div><h3>Internal Application</h3><p>Integrate containers into our own Bakery and Dairy (Yogurt Culture) product formats and packaging.</p></div>
+    <div class="step"><div class="num">2</div><h3>HORECA Co-development</h3><p>Trial with existing hotel, restaurant and café customers for portioned desserts, bakery and food-service.</p></div>
+    <div class="step"><div class="num">3</div><h3>Marketing & Brand</h3><p>Showcase at HQ Showroom, in-store displays, online store, social media content, and events.</p></div>
+    <div class="step"><div class="num">4</div><h3>New Joint Channels</h3><p>Explore co-marketing and new distribution channels developed together with ABLPACK as vendor partner.</p></div>
+  </div>
+
+  <h2 class="sec" style="font-size:21px;margin-top:46px;">Local Retail Repacking Plan (Thailand)</h2>
+  <p class="lead">For domestic distribution we plan to repack imported containers into local consumer pack sizes:</p>
+  <div class="packrow">
+    <div class="pk"><div class="pn">5</div><div class="pl">pcs / pack</div></div>
+    <div class="pk"><div class="pn">10</div><div class="pl">pcs / pack</div></div>
+    <div class="pk"><div class="pn">25</div><div class="pl">pcs / pack</div></div>
+    <div class="pk"><div class="pn">50</div><div class="pl">pcs / pack</div></div>
+    <div class="pk"><div class="pn">100</div><div class="pl">pcs / pack</div></div>
+  </div>
+</div></section>
+
+<!-- RFQ -->
+<section id="rfq"><div class="wrap">
+  <div class="eyebrow">Request for Quotation</div>
+  <h2 class="sec">Information Requested from ABLPACK</h2>
+  <p class="lead">To proceed, we kindly request the following in your quotation:</p>
+  <div class="rfq">
+    <div class="rfq-item"><div class="ck">1</div><p>FOB price per SKU (per piece) in colored finish, plus matching lid price per piece.</p></div>
+    <div class="rfq-item"><div class="ck">2</div><p>Confirmation of MOQ per color (standard 1 carton/color) and pcs/box per SKU.</p></div>
+    <div class="rfq-item"><div class="ck">3</div><p>Any color/pattern surcharge (standard vs. premium / marble / leopard / custom).</p></div>
+    <div class="rfq-item"><div class="ck">4</div><p>Confirmation that a mixed-model / color / size LCL is acceptable + any minimum order value.</p></div>
+    <div class="rfq-item"><div class="ck">5</div><p>Lead time / current spot-stock availability for the requested SKUs and colors.</p></div>
+    <div class="rfq-item"><div class="ck">6</div><p>Payment terms (T/T deposit % and balance; L/C option).</p></div>
+    <div class="rfq-item"><div class="ck">7</div><p>Provision of Form E / Certificate of Origin (ASEAN–China FTA) for 0% duty.</p></div>
+    <div class="rfq-item"><div class="ck">8</div><p>Food-grade certifications (SGS/ISO 9001, FDA, Kosher, UKAS) and MSDS in PDF.</p></div>
+    <div class="rfq-item"><div class="ck">9</div><p>Free samples (we cover courier) for selected SKUs and colors.</p></div>
+    <div class="rfq-item"><div class="ck">10</div><p>Recommended LCL shipping / consolidation support, Shanghai → Bangkok.</p></div>
+  </div>
+
+  <h2 class="sec" style="font-size:21px;margin-top:46px;">Proposed Commercial Approach</h2>
+  <div class="terms">
+    <div class="trow"><div class="tk">Order Type</div><div class="tv">1st LCL trial — mixed model, color and size (assortment for market study)</div></div>
+    <div class="trow"><div class="tk">Quantity Basis</div><div class="tv">Small quantity per SKU-color; consolidated single LCL (full quantities to follow)</div></div>
+    <div class="trow"><div class="tk">Incoterm</div><div class="tv">FOB Shanghai preferred — or CIF Bangkok; please quote both if possible</div></div>
+    <div class="trow"><div class="tk">Duty</div><div class="tv">0% via Form E (ASEAN–China FTA); Thai VAT 7% on CIF borne by buyer</div></div>
+    <div class="trow"><div class="tk">Payment</div><div class="tv">T/T 30% deposit on PO, 70% against B/L (subject to negotiation)</div></div>
+    <div class="trow"><div class="tk">Scale-up</div><div class="tv">Single-SKU & full-container orders with volume pricing after the study phase</div></div>
+  </div>
+</div></section>
+
+<!-- CTA -->
+<section id="contact" class="cta-band"><div class="wrap">
+  <h2>Let's Confirm the Trial Order</h2>
+  <p>We welcome your quotation and a short video call (or WeChat / WhatsApp) to align on pricing, available colors, mixed-LCL terms and sample logistics — and begin the Thailand market study.</p>
+  <div class="cta-row">
+    <span>🏢 Bangkok Quality Milk Products Co., Ltd.</span>
+    <span>🥛 Yogi · Yogurt Culture</span>
+    <span>📦 Sukhumvit 109, Samut Prakan 10270, Thailand</span>
+  </div>
+  <div class="print"><button onclick="window.print()">⤓ Save / Print this Proposal</button></div>
+</div></section>
+
+<footer>BANGKOK QUALITY MILK PRODUCTS CO., LTD. × ABLPACK SHANGHAI · PARTNERSHIP PROPOSAL &amp; RFQ · SMOOTH WALL SERIES 2026 · STRICTLY CONFIDENTIAL</footer>
+
+<script>
+  const SHAPES = { Round:'var(--c-round)', Oval:'var(--c-oval)', Rectangular:'var(--c-rect)', Square:'var(--c-square)' };
+  const SKUS = [
+    {id:'AP125A',shape:'Round',cap:'125 ml / 4.2 oz',top:'85 mm',base:'66 mm',ht:'36 mm',pcs:'2,000',load:'641 / 1,443'},
+    {id:'AP150A',shape:'Round',cap:'150 ml / 5.0 oz',top:'94 mm',base:'75 mm',ht:'33 mm',pcs:'2,000',load:'634 / 1,428'},
+    {id:'AP215',shape:'Round',cap:'215 ml / 7.3 oz',top:'118 mm',base:'98 mm',ht:'30 mm',pcs:'1,000',load:'594 / 1,336'},
+    {id:'AP235',shape:'Round',cap:'235 ml / 7.9 oz',top:'110 mm',base:'88 mm',ht:'40 mm',pcs:'2,000',load:'358 / 807'},
+    {id:'AP068',shape:'Oval',cap:'68 ml / 2.3 oz',top:'77 × 56 mm',base:'65 × 45 mm',ht:'27 mm',pcs:'2,000',load:'798 / 1,797'},
+    {id:'AP085',shape:'Oval',cap:'85 ml / 2.9 oz',top:'97 × 66 mm',base:'75 × 44 mm',ht:'32 mm',pcs:'2,000',load:'689 / 1,551'},
+    {id:'AP168',shape:'Rectangular',cap:'168 ml / 5.7 oz',top:'108 × 72 mm',base:'90 × 57 mm',ht:'33 mm',pcs:'2,000',load:'541 / 1,218'},
+    {id:'AP200',shape:'Rectangular',cap:'200 ml / 6.8 oz',top:'165 × 65 mm',base:'145 × 45 mm',ht:'30 mm',pcs:'1,000',load:'851 / 1,914'},
+    {id:'AP620',shape:'Rectangular',cap:'620 ml / 21.0 oz',top:'188 × 128 mm',base:'147 × 90 mm',ht:'45 mm',pcs:'1,000',load:'335 / 754'},
+    {id:'AP750',shape:'Rectangular',cap:'750 ml / 25.3 oz',top:'185 × 129 mm',base:'157 × 100 mm',ht:'48 mm',pcs:'1,000',load:'307 / 690'},
+    {id:'AP100H',shape:'Square',cap:'100 ml / 3.4 oz',top:'75 × 75 mm',base:'52 × 52 mm',ht:'33 mm',pcs:'2,000',load:'892 / 2,007'},
+    {id:'AP300',shape:'Square',cap:'300 ml / 10.1 oz',top:'112 × 112 mm',base:'90 × 90 mm',ht:'42 mm',pcs:'1,000',load:'588 / 1,323'},
+  ];
+  const body = document.getElementById('skuBody');
+  const tnote = document.getElementById('tnote');
+  function render(filter){
+    const rows = SKUS.filter(s => filter==='all' || s.shape===filter);
+    body.innerHTML = rows.map(s =>
+      '<tr><td class="sku-id" style="color:var(--navy)">'+s.id+'</td>'+
+      '<td><span class="shape-tag" style="background:'+SHAPES[s.shape]+'">'+s.shape+'</span></td>'+
+      '<td>'+s.cap+'</td><td>'+s.top+'</td><td>'+s.base+'</td><td>'+s.ht+'</td>'+
+      '<td class="pcs">'+s.pcs+'</td><td>'+s.load+'</td></tr>'
+    ).join('');
+    tnote.textContent = 'Showing '+rows.length+' SKU'+(rows.length>1?'s':'')+'. Pcs/box and loadability are factory-standard, as published in ABLPACK 2026-01EN.';
+  }
+  document.querySelectorAll('#filters .fbtn').forEach(b=>{
+    b.addEventListener('click',()=>{
+      document.querySelectorAll('#filters .fbtn').forEach(x=>x.classList.remove('active'));
+      b.classList.add('active');
+      render(b.dataset.f);
+    });
+  });
+  render('all');
+</script>
+</body>
+</html>
